@@ -1,0 +1,19 @@
+@import "../../common/variables";
+@import "../../common/mixins";
+
+.container {
+  @include form-step;
+  @include description-item;
+  max-width: 100%;
+  display: block;
+
+  & h2 {
+    @include description-item-title;
+    width: 100%;
+    height: 1rem;
+  }
+
+  p {
+    margin: 1rem 0;
+  }
+}

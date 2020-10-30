@@ -1,0 +1,59 @@
+@import "../../common/mixins";
+@import "../../common/variables";
+
+.conditions {
+  display: flex;
+  flex-direction: column;
+
+  & h2 {
+    @include description-item-title;
+  }
+}
+
+.form-item {
+  @include form-item;
+}
+
+.benefit {
+  background-color: lightgray;
+  width: 75%;
+}
+
+.date-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-date {
+  height: 2rem;
+  border: none;
+
+  &::-webkit-calendar-picker-indicator {
+    font-size: 1.5rem;
+    opacity: 0.7;
+  }
+}
+
+.round {
+  display: flex;
+  margin-top: 1rem;
+
+  & .checkbox-item:nth-child(2){
+    margin-left: 3rem;
+  }
+}
+
+.checkbox-item {
+  margin: 0.5rem 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.option {
+  height: 2rem;
+  border: 1px solid salmon;
+}
+

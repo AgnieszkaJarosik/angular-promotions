@@ -1,0 +1,27 @@
+@import "../../common/variables";
+@import "../../common/mixins";
+
+.description {
+  display: flex;
+  flex-direction: column;
+
+  & h2 {
+    @include description-item-title;
+  }
+}
+
+.form-item {
+  @include form-item;
+}
+
+.textarea {
+  height: 6rem;
+
+  &::placeholder {
+    padding-top: 0.6rem;
+  }
+}
+
+
+
+

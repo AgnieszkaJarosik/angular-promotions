@@ -1,0 +1,17 @@
+<div class="main-container">
+  <h2>Promotions List</h2>
+  <div class="content">
+    <div class="name header">
+      <h3>Name</h3>
+      <div class="name cell" *ngFor="let prom of promotions">{{prom.description?.marketingName}}</div>
+    </div>
+    <div class="edit header">
+      <h3>Edit</h3>
+      <div class="edit cell" *ngFor="let prom of promotions" (click)="editPromotion(prom)">edit</div>
+    </div>
+    <div class="delete header">
+      <h3>Delete</h3>
+      <div class="edit cell" *ngFor="let prom of promotions" (click)="deletePromotion(prom)">delete</div>
+    </div>
+  </div>
+</div>

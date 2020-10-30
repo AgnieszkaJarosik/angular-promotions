@@ -1,0 +1,19 @@
+ <div class="description">
+   <h2>Description</h2>
+   <form [formGroup]="description" class="description">
+     <input type="text"
+            placeholder="Marketing name"
+            class="form-item"
+            formControlName="marketingName">
+     <input type="text"
+            placeholder="Technical name"
+            class="form-item"
+            formControlName="technicalName">
+     <textarea placeholder="Description"
+               class="form-item textarea"
+               formControlName="description">
+     </textarea>
+   </form>
+  </div>
+
+

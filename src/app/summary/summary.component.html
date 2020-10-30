@@ -1,0 +1,15 @@
+<div class="container">
+  <h2>Summary</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+    Sed tellus elit, sagittis vitae neque nec, congue condimentum sem.
+    Pellentesque nunc enim, tempus ut egestas ut, dictum non mauris. Curabitur sit amet nibh nunc.
+    Aliquam porta justo ut purus mollis, non dignissim arcu consequat.
+    Duis dapibus egestas lectus, eget aliquet felis fermentum in.
+    Nulla non lorem at massa vestibulum viverra eu a metus.
+  </p>
+  <form [formGroup]="formGroup" (submit)="handleSubmit($event)" (reset)="handleReset()" class="buttons-container">
+      <button class="button reset" type="reset" >Reset</button>
+      <button class="button save" type="submit" [disabled]="formGroup.invalid">Save</button>
+  </form>
+</div>

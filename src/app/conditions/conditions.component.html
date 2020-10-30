@@ -1,0 +1,64 @@
+<div class="conditions" >
+  <h2>Conditions</h2>
+  <form [formGroup]="conditions" class="conditions">
+  <select class="form-item" formControlName="portal" >
+    <option class="option"
+            *ngFor="let option of portal"
+            [value]="option">
+      {{option}}
+    </option>
+  </select>
+  <select class="form-item" formControlName="type" >
+    <option class="option"
+            *ngFor="let option of type"
+            [value]="option">
+      {{option}}
+    </option>
+  </select>
+  <input type="text"
+         class="form-item benefit"
+         placeholder="Benefit amount"
+         formControlName="benefitAmount"
+         >
+  <div class="date-container">
+    <input type="date" class="form-date" formControlName="startDate" >
+    <input type="date" class="form-date" formControlName="finishDate" >
+  </div>
+  <div class="round" >
+    <div class="checkbox-item">
+      <input id="conditions"
+             type="radio"
+             class="form-round"
+             formControlName="price"
+             value="businessConditions"
+             >
+      <label for="conditions" class="form-label">Business conditions</label>
+    </div>
+    <div class="checkbox-item">
+      <input id="price"
+             type="radio"
+             class="form-round"
+             formControlName="price"
+             value="base price 100%"
+             >
+      <label for="price" class="form-label">Base price 100%</label>
+    </div>
+  </div>
+  <div class="checkbox-item">
+    <input id="connect"
+           type="checkbox"
+           class="form-square"
+           formControlName="connectWithOther"
+           >
+    <label for="connect" class="form-label">Connect with other promotions</label>
+  </div>
+  <div class="checkbox-item">
+    <input id="back"
+           type="checkbox"
+           class="form-square"
+           formControlName="backPromotion"
+           >
+    <label for="back" class="form-label">Back promotion</label>
+  </div>
+  </form>
+</div>

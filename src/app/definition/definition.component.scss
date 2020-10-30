@@ -1,0 +1,27 @@
+@import "../../common/mixins";
+@import "../../common/variables";
+
+.def-container {
+  @include form-step;
+}
+
+.tutorial {
+  @include description-item;
+
+  & h2 {
+    @include description-item-title;
+  }
+}
+
+.description {
+  @include description-item;
+}
+
+.conditions {
+  @include description-item;
+}
+
+.tutorial-paragraph {
+  letter-spacing: 1px;
+  text-indent: 5rem;
+}
