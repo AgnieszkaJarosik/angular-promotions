@@ -4,10 +4,30 @@
 .conditions {
   display: flex;
   flex-direction: column;
+}
 
-  & h2 {
-    @include description-item-title;
+.title-container {
+  @include description-item-title;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & span {
+    display: inline-block;
+    position: static;
+    font-weight: 400;
+    font-size: 0.8rem;
   }
+}
+
+.item-container {
+  @include item-container;
+  justify-content: space-between;
+}
+
+.required {
+  @include required;
 }
 
 .form-item {
@@ -15,7 +35,8 @@
 }
 
 .benefit {
-  background-color: lightgray;
+  background-color: #f2f2f2;
+  color: #949494;
   width: 75%;
 }
 
@@ -23,6 +44,17 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
+
+  & input {
+    width: 100%;
+    margin-right: 1rem;
+    padding-right: 0.4rem;
+  }
+
+  & span {
+    top: 0.2rem;
+    right: 1.2rem;
+  }
 }
 
 .form-date {
@@ -55,5 +87,13 @@
 .option {
   height: 2rem;
   border: 1px solid salmon;
+}
+
+.error {
+  @include error-message;
+}
+
+.date-error {
+  margin-top: 0;
 }
 

@@ -1,64 +1,102 @@
 <div class="conditions" >
-  <h2>Conditions</h2>
+  <div class="title-container">
+    <h2>Conditions</h2>
+    <span class="required">*is required</span>
+  </div>
   <form [formGroup]="conditions" class="conditions">
-  <select class="form-item" formControlName="portal" >
-    <option class="option"
-            *ngFor="let option of portal"
-            [value]="option">
-      {{option}}
-    </option>
-  </select>
-  <select class="form-item" formControlName="type" >
-    <option class="option"
-            *ngFor="let option of type"
-            [value]="option">
-      {{option}}
-    </option>
-  </select>
-  <input type="text"
-         class="form-item benefit"
-         placeholder="Benefit amount"
-         formControlName="benefitAmount"
-         >
-  <div class="date-container">
-    <input type="date" class="form-date" formControlName="startDate" >
-    <input type="date" class="form-date" formControlName="finishDate" >
-  </div>
-  <div class="round" >
-    <div class="checkbox-item">
-      <input id="conditions"
-             type="radio"
-             class="form-round"
-             formControlName="price"
-             value="businessConditions"
-             >
-      <label for="conditions" class="form-label">Business conditions</label>
+    <div class="item-container">
+      <select class="form-item" formControlName="portal" >
+        <option class="option"
+                *ngFor="let option of portal"
+                [value]="option">
+          {{option}}
+        </option>
+      </select>
+      <span class="required">*</span>
+      <app-question-mark></app-question-mark>
     </div>
-    <div class="checkbox-item">
-      <input id="price"
-             type="radio"
-             class="form-round"
-             formControlName="price"
-             value="base price 100%"
-             >
-      <label for="price" class="form-label">Base price 100%</label>
+    <div class="error"
+      *ngIf="conditions.get('portal').invalid && (conditions.get('portal').dirty || conditions.get('portal').touched)">
+        Portal is required.
     </div>
-  </div>
-  <div class="checkbox-item">
-    <input id="connect"
-           type="checkbox"
-           class="form-square"
-           formControlName="connectWithOther"
-           >
-    <label for="connect" class="form-label">Connect with other promotions</label>
-  </div>
-  <div class="checkbox-item">
-    <input id="back"
-           type="checkbox"
-           class="form-square"
-           formControlName="backPromotion"
-           >
-    <label for="back" class="form-label">Back promotion</label>
-  </div>
+    <div class="item-container">
+      <select class="form-item" formControlName="type" >
+        <option class="option"
+                *ngFor="let option of type"
+                [value]="option">
+          {{option}}
+        </option>
+      </select>
+      <span class="required">*</span>
+      <app-question-mark></app-question-mark>
+    </div>
+    <div class="error"
+         *ngIf="conditions.get('type').invalid && (conditions.get('type').dirty || conditions.get('type').touched)">
+      Type is required.
+    </div>
+    <div class="item-container">
+      <input type="text"
+             class="form-item benefit"
+             placeholder="Benefit amount"
+             formControlName="benefitAmount">
+      <app-question-mark></app-question-mark>
+    </div>
+    <div class="item-container">
+      <div class="date-container">
+        <div class="item-container">
+          <input type="date" class="form-date" formControlName="startDate">
+          <span class="required">*</span>
+        </div>
+        <div class="item-container">
+          <input type="date" class="form-date" formControlName="finishDate" >
+        </div>
+      </div>
+      <app-question-mark></app-question-mark>
+    </div>
+    <div class="error date-error"
+         *ngIf="conditions.get('startDate').invalid && (conditions.get('startDate').dirty || conditions.get('startDate').touched)">
+      Start date is required.
+    </div>
+    <div class="item-container">
+      <div class="round" >
+        <div class="checkbox-item">
+          <input id="conditions"
+                 type="radio"
+                 class="form-round"
+                 formControlName="price"
+                 value="businessConditions">
+          <label for="conditions" class="form-label">Business conditions</label>
+        </div>
+        <div class="checkbox-item">
+          <input id="price"
+                 type="radio"
+                 class="form-round"
+                 formControlName="price"
+                 value="base price 100%">
+          <label for="price" class="form-label">Base price 100%</label>
+        </div>
+      </div>
+      <app-question-mark></app-question-mark>
+    </div>
+    <div class="item-container">
+      <div class="checkbox-item">
+        <input id="connect"
+               type="checkbox"
+               class="form-square"
+               formControlName="connectWithOther">
+        <label for="connect" class="form-label">Connect with other promotions</label>
+      </div>
+      <app-question-mark></app-question-mark>
+    </div>
+    <div class="item-container">
+      <div class="checkbox-item">
+        <input id="back"
+               type="checkbox"
+               class="form-square"
+               formControlName="backPromotion">
+        <label for="back" class="form-label">Back promotion</label>
+      </div>
+      <app-question-mark></app-question-mark>
+    </div>
   </form>
 </div>

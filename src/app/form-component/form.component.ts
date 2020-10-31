@@ -25,7 +25,7 @@ export class FormComponent implements OnInit {
       portal: new FormControl('',  Validators.required),
       type: new FormControl('',  Validators.required),
       benefitAmount: new FormControl(),
-      startDate: new FormControl(''),
+      startDate: new FormControl('',  Validators.required),
       finishDate: new FormControl(''),
       price: new FormControl(false),
       connectWithOther: new FormControl(false),

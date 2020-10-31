@@ -1,17 +1,19 @@
 <nav class="nav-container">
   <ol>
-    <li class="nav-item item-active"><a routerLink="1"><div class="nr active">1</div>Definition</a></li>
-    <li class="nav-item"><a routerLink="2"><div class="nr">2</div>Choose products</a></li>
-    <li class="nav-item"><a routerLink="3"><div class="nr">3</div>Exclude products</a></li>
-    <li class="nav-item"><a routerLink="4"class="item-inactive"><div class="nr inactive">4</div>Bonus products</a>
-      <app-question-mark></app-question-mark>
+    <li class="nav-item"
+        [class.item-active]="activeId === navItem.nr"
+        *ngFor="let navItem of navList">
+      <a [routerLink]="navItem.nr"
+         [class.item-inactive]="navItem.nr !== 1 && (!routesActive || (navItem.inactive && !bonusActive))">
+        <div class="nr"
+             [class.nr-active]="activeId === navItem.nr"
+             [class.nr-inactive]="navItem.nr !== 1 && (!routesActive || (navItem.inactive && !bonusActive))">
+          {{navItem.nr}}
+        </div>
+        {{navItem.name}}
+      </a>
+      <app-question-mark *ngIf="navItem.inactive"></app-question-mark>
     </li>
-    <li class="nav-item"><a routerLink="5" class="item-inactive"><div class="nr inactive">5</div>Products limits</a>
-      <app-question-mark></app-question-mark>
-    </li>
-    <li class="nav-item"><a routerLink="6"><div class="nr">6</div>Choose clients</a></li>
-    <li class="nav-item"><a routerLink="7"><div class="nr">7</div>Exclude clients</a></li>
-    <li class="nav-item"><a routerLink="8"><div class="nr">8</div>Clients limits</a></li>
-    <li class="nav-item"><a routerLink="9"><div class="nr">9</div>Summary</a></li>
   </ol>
 </nav>
+

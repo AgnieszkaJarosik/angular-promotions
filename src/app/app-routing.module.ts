@@ -14,7 +14,7 @@ const routes: Routes = [
   { path: 'form',
     component: FormComponent,
     children: [
-      { path: '1', component: DefinitionComponent },
+      { path: '1', canActivate: [FormGuardGuard], component: DefinitionComponent },
       { path: '2', canActivate: [FormGuardGuard], component: FormStepComponent },
       { path: '3', canActivate: [FormGuardGuard], component: FormStepComponent },
       { path: '4', canActivate: [FormGuardGuard, BonusGuard], component: FormStepComponent },

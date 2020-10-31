@@ -4,10 +4,25 @@
 .description {
   display: flex;
   flex-direction: column;
+}
 
-  & h2 {
-    @include description-item-title;
+.title-container {
+  @include description-item-title;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  & span {
+    display: inline-block;
+    position: static;
+    font-weight: 400;
+    font-size: 0.8rem;
   }
+}
+
+.form-container {
+  @include item-container;
 }
 
 .form-item {
@@ -22,6 +37,18 @@
   }
 }
 
+.required {
+  @include required;
+}
+
+.tutorial-paragraph {
+  letter-spacing: 1px;
+  margin: 1rem 0;
+}
+
+.error {
+  @include error-message;
+}
 
 
 

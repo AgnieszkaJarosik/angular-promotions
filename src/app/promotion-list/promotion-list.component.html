@@ -7,11 +7,15 @@
     </div>
     <div class="edit header">
       <h3>Edit</h3>
-      <div class="edit cell" *ngFor="let prom of promotions" (click)="editPromotion(prom)">edit</div>
+      <div class="edit cell" *ngFor="let prom of promotions" (click)="editPromotion(prom)">
+        <img src="assets/edit.png">
+      </div>
     </div>
     <div class="delete header">
       <h3>Delete</h3>
-      <div class="edit cell" *ngFor="let prom of promotions" (click)="deletePromotion(prom)">delete</div>
+      <div class="delete cell" *ngFor="let prom of promotions" (click)="deletePromotion(prom)">
+        <img src="assets/delete.png">
+      </div>
     </div>
   </div>
 </div>

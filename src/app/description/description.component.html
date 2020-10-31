@@ -1,19 +1,55 @@
  <div class="description">
-   <h2>Description</h2>
+   <div class="title-container">
+     <h2>Description</h2>
+     <span class="required">*is required</span>
+   </div>
    <form [formGroup]="description" class="description">
-     <input type="text"
-            placeholder="Marketing name"
-            class="form-item"
-            formControlName="marketingName">
-     <input type="text"
-            placeholder="Technical name"
-            class="form-item"
-            formControlName="technicalName">
-     <textarea placeholder="Description"
-               class="form-item textarea"
-               formControlName="description">
-     </textarea>
+     <div class="form-container">
+       <input type="text"
+              placeholder="Marketing name"
+              class="form-item"
+              formControlName="marketingName">
+       <span class="required">*</span>
+       <app-question-mark></app-question-mark>
+     </div>
+     <div class="error"
+          *ngIf="description.get('marketingName').invalid && (description.get('marketingName').dirty || description.get('marketingName').touched)">
+       Marketing name is required.
+     </div>
+     <div class="form-container">
+       <input type="text"
+              placeholder="Technical name"
+              class="form-item"
+              formControlName="technicalName">
+       <app-question-mark></app-question-mark>
+     </div>
+     <div class="form-container">
+       <textarea placeholder="Description"
+                 class="form-item textarea"
+                 formControlName="description">
+       </textarea>
+       <app-question-mark></app-question-mark>
+     </div>
    </form>
+
+   <div class="tutorial">
+     <h2 class="title-container">Catalog promotion tutorial</h2>
+     <p class="tutorial-paragraph">
+       Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+       Vestibulum dolor nibh, sagittis ac maximus quis, feugiat vel libero.
+       In a lectus eu magna sodales tincidunt nec sit amet felis. Donec suscipit venenatis eros.
+     </p>
+
+     <p class="tutorial-paragraph">
+       Nunc gravida feugiat elit. Integer ac consectetur nisl, nec feugiat erat.
+       Interdum et malesuada fames ac ante ipsum primis in faucibus.
+     </p>
+
+     <p class="tutorial-paragraph">
+       Nunc volutpat a libero id iaculis. Suspendisse sapien dui, convallis in erat facilisis, aliquet maximus ipsum.
+       Cras consectetur mollis sem, vitae lacinia quam convallis suscipit. Maecenas nec tortor arcu.
+     </p>
+   </div>
   </div>
 
 

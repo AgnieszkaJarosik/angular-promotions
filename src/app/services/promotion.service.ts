@@ -5,18 +5,22 @@ import {Observable} from 'rxjs';
   providedIn: 'root'
 })
 export class PromotionService {
-  public active = false;
-  public bonus = false;
+  public active;
+  public bonus;
   public onPromotionsChange = new EventEmitter();
+  public onActiveChange = new EventEmitter();
+  public onBonusChange = new EventEmitter();
 
   constructor() { }
 
   activeChange(value: boolean): void {
     this.active = value;
+    this.onActiveChange.emit(value);
   }
 
   bonusChange(value: boolean): void {
     this.bonus = value;
+    this.onBonusChange.emit(value);
   }
 
   savePromotion(value): void {

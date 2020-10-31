@@ -24,7 +24,9 @@
   }
 
   & .item-inactive {
+    background-color: #eff1f3;
     color: #b4b5b7;
+    cursor: default;
   }
 
   &:first-child {
@@ -51,11 +53,11 @@
   font-weight: 500;
 }
 
-.active {
+.nr-active {
   background-color: #991402;
 }
 
-.inactive {
+.nr-inactive {
   background-color: #dee1e7;
   color: #a7a9ae;
 }
